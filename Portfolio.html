@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Abhay Anil Portfolio</title>
+
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html{
+        scroll-behavior:smooth;
+    }
+
+    body{
+        background:#0f172a;
+        color:white;
+    }
+
+    /* Navbar */
+
+    nav{
+        position:fixed;
+        top:0;
+        width:100%;
+        background:#0f172a;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:20px 10%;
+        z-index:1000;
+    }
+
+    .logo{
+        font-size:28px;
+        font-weight:bold;
+        color:#38bdf8;
+    }
+
+    nav ul{
+        display:flex;
+        list-style:none;
+        gap:25px;
+    }
+
+    nav a{
+        color:white;
+        text-decoration:none;
+        transition:0.3s;
+    }
+
+    nav a:hover{
+        color:#38bdf8;
+    }
+
+    /* Hero */
+
+    .hero{
+        min-height:100vh;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:100px 10%;
+        gap:50px;
+    }
+
+    .hero-text{
+        flex:1;
+    }
+
+    .hero-text h1{
+        font-size:55px;
+        margin-bottom:15px;
+    }
+
+    .hero-text span{
+        color:#38bdf8;
+    }
+
+    .hero-text h2{
+        color:white;
+        margin-bottom:20px;
+    }
+
+    .hero-text p{
+        color:#d1d5db;
+        line-height:1.8;
+        margin-bottom:30px;
+    }
+
+    .btn{
+        display:inline-block;
+        padding:12px 25px;
+        background:#38bdf8;
+        color:#0f172a;
+        text-decoration:none;
+        border-radius:8px;
+        font-weight:bold;
+        transition: 0.3s;
+    }
+
+    .btn:hover{
+        transform:translateY(-5px);
+        box-shadow:0 8px 20px rgba(56,189,248,0.4);
+    }
+
+    .hero-image{
+        flex:1;
+        display:flex;
+        justify-content:center;
+    }
+
+    .hero-image img{
+        width:350px;
+        height:420px;
+        object-fit:cover;
+        border-radius:20px;
+        border:4px solid #38bdf8;
+        box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 20px rgba(56,189,248,0.3);
+        transition:0.3s;
+    }
+
+    .hero-image img:hover{
+        transform:translateY(-8px);
+    }
+
+    /* Sections */
+
+    section{
+        padding:90px 10%;
+    }
+
+    .section-title{
+        text-align:center;
+        font-size:40px;
+        margin-bottom:50px;
+        color:#38bdf8;
+    }
+
+    /* About */
+
+    .about{
+        text-align:center;
+    }
+
+    .about p{
+        max-width:800px;
+        margin:auto;
+        line-height:1.8;
+        font-size:20px;
+    }
+
+     /* Education */
+
+    .education-container{
+        max-width:1000px;
+        margin:auto;
+        display:flex;
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .education-card{
+        display:flex;
+        gap:30px;
+        background:#1e293b;
+        padding:30px;
+        border-radius:20px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.25);
+        transition:0.3s;
+    }
+
+    .education-card:hover{
+        transform:translateY(-8px);
+    }
+
+    .education-year{
+        min-width:140px;
+        height:55px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:#38bdf8;
+        color:#0f172a;
+        font-weight:bold;
+        border-radius:12px;
+    }
+
+    .education-content{
+        flex:1;
+    }
+
+    .education-content h3{
+        color:#38bdf8;
+        margin-bottom:8px;
+        font-size:24px;
+    }
+
+    .education-content h4{
+        color:#e2e8f0;
+        margin-bottom:15px;
+    }
+
+    .education-content p{
+        color:#d1d5db;
+        line-height:1.8;
+    }
+
+    .education-content strong{
+        color:#38bdf8;
+    }
+
+    /* Skills */
+
+    .skills-container{
+        display:grid;
+        grid-template-columns:repeat(5,1fr);
+        gap:20px;
+    }
+
+    .skill{
+        background:#1e293b;
+        padding:25px;
+        border-radius:10px;
+        text-align:center;
+        transition:0.3s;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .skill:hover{
+        transform:translateY(-8px);
+    }
+
+    .skill img{
+        width:70px;
+        height:70px;
+        object-fit:contain;
+    }
+
+    .skill p{
+        font-size:18px;
+        font-weight:bold;
+    }
+
+     /* Internship */
+
+    .timeline{
+        position:relative;
+        max-width:1000px;
+        margin:auto;
+    }
+
+    .timeline::before{
+        content:"";
+        position:absolute;
+        left:20px;
+        top:0;
+        width:4px;
+        height:100%;
+        background:#38bdf8;
+    }
+
+    .timeline-item{
+        position:relative;
+        padding-left:70px;
+        margin-bottom:50px;
+    }
+
+    .timeline-dot{
+        position:absolute;
+        left:8px;
+        top:15px;
+        width:28px;
+        height:28px;
+        border-radius:50%;
+        background:#38bdf8;
+        border:4px solid #0f172a;
+    }
+
+    .timeline-content{
+        background:#1e293b;
+        padding:25px;
+        border-radius:15px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.3);
+        transition:0.3s;
+    }
+
+    .timeline-content:hover{
+        transform:translateY(-8px);
+    }
+
+    .timeline-content h3{
+        color:#38bdf8;
+        font-size:24px;
+        margin-bottom:5px;
+    }
+
+    .timeline-content h4{
+        color:#e2e8f0;
+        margin-bottom:8px;
+    }
+
+    .timeline-content span{
+        color:#94a3b8;
+        font-size:14px;
+        display:block;
+        margin-bottom:15px;
+    }
+
+    .timeline-content p{
+        line-height:1.9;
+        color:#d1d5db;
+        font-size:16px;
+    }
+    .current-badge{
+        display:inline-block;
+        background:#22c55e;
+        color:white;
+        padding:6px 12px;
+        border-radius:20px;
+        font-size:13px;
+        font-weight:bold;
+        margin-bottom:15px;
+    }
+
+    /* Projects */
+
+    .project-showcase{
+        display:flex;
+        align-items:center;
+        gap:50px;
+        margin-bottom:100px;
+    }
+
+    .reverse{
+        flex-direction:row-reverse;
+    }
+
+    .project-content{
+        flex:1;
+    }
+
+    .project-content h3{
+        font-size:32px;
+        margin-bottom:20px;
+        color:#38bdf8;
+    }
+
+    .project-content p{
+        line-height:1.9;
+        color:#d1d5db;
+        margin-bottom:20px;
+    }
+
+    .project-image{
+        flex:1;
+    }
+
+    .project-image img{
+        width:100%;
+        border-radius:15px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.4);
+        transition:0.3s;
+    }
+
+    .project-image img:hover{
+        transform:scale(1.03);
+    }
+
+    .tech-stack{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .tech-stack span{
+        background:#1e293b;
+        padding:8px 15px;
+        border-radius:20px;
+        color:#38bdf8;
+        font-size:14px;
+    }
+  
+    /* Contact */
+
+    .contact-heading{
+        font-size:60px;
+        margin-bottom:40px;
+    }
+
+    .contact-heading span{
+        color:#38bdf8;
+    }
+
+    .contact-layout{
+        display:flex;
+        gap:40px;
+        align-items:flex-start;
+    }
+
+    .contact-left{
+        flex:1;
+    }
+
+    .contact-description{
+        line-height:1.8;
+        color:#d1d5db;
+        font-size:18px;
+        margin-bottom:30px;
+    }
+
+    .contact-card{
+        display:flex;
+        align-items:center;
+        gap:20px;
+        background:#1e293b;
+        padding:25px;
+        border-radius:20px;
+        margin-bottom:20px;
+        transition:0.3s;
+    }
+
+    .contact-card:hover{
+        transform:translateY(-5px);
+    }
+
+    .contact-icon{
+        width:60px;
+        height:60px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:28px;
+        border-radius:15px;
+        background:#38bdf8;
+    }
+
+    .contact-card small{
+        color:#94a3b8;
+    }
+
+    .contact-card h3{
+        margin-top:5px;
+    }
+
+    .social-section{
+        margin-top:40px;
+    }
+
+    .social-section p{
+        margin-bottom:15px;
+        color:#94a3b8;
+    }
+
+    .social-icons{
+        display:flex;
+        gap:20px;
+    }
+
+    .social-icons a{
+        width:60px;
+        height:60px;
+        background:#1e293b;
+        border-radius:15px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        transition:0.3s;
+    }
+
+    .social-icons a:hover{
+        transform:translateY(-5px);
+    }
+
+    .social-icons img{
+        width:32px;
+        height:32px;
+        object-fit:contain;
+    }
+
+    .contact-form{
+        flex:1.5;
+        background:#1e293b;
+        padding:35px;
+        border-radius:25px;
+        box-shadow:0 10px 30px rgba(0,0,0,.3);
+    }
+
+    .contact-form form{
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .contact-form label{
+        color:#94a3b8;
+        text-transform:uppercase;
+        font-size:13px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+        padding:18px;
+        border:none;
+        border-radius:12px;
+        background:#0f172a;
+        color:white;
+        font-size:16px;
+        resize:none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus{
+        outline:2px solid #38bdf8;
+    }
+
+    .send-btn{
+        margin-top:10px;
+        padding:18px;
+        border:none;
+        border-radius:12px;
+        font-size:18px;
+        font-weight:bold;
+        cursor:pointer;
+        color:white;
+        background:#38bdf8;
+        transition:.3s;
+    }
+
+    .send-btn:hover{
+        transform:translateY(-5px);
+    }
+
+    /* Footer */
+
+    footer{
+        text-align:center;
+        padding:20px;
+        background:#0f172a;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav>
+
+    <div class="logo">Abhay</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#internships">Internships</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <h1>Hi, I'm <span>Abhay Anil</span></h1>
+
+        <h2>Computer Science Student | Full Stack Developer</h2>
+
+        <p>
+            Passionate about Python, Data Science, Machine Learning
+            and Full Stack Development. I enjoy building real-world
+            applications that solve practical problems.
+        </p>
+
+        <a href="AbhayResumePortfolio.pdf" target="_blank" class="btn">Download Resume</a>
+    
+    </div>
+
+    <div class="hero-image">
+               
+        <img src="images/abhaypic.jpeg" alt="Profile">
+           
+    </div>
+
+</section>
+
+<!-- About -->
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+
+        <p>
+            I am a Computer Science and Engineering graduate with a strong passion for Full Stack Development, Artificial Intelligence, Machine Learning,
+            and Data Science.I enjoy building scalable web applications and intelligent solutions that address real-world challenges.My technical 
+            experience includes developing projects such as an Email Spam Detection System, AI Chatbot Application, EV Charging Slot Booking Platform, 
+            and Real-Time Object Detection using YOLOv8. Through these projects, I have gained hands-on experience with Python, Django, React, Machine Learning, 
+            Computer Vision, and database management.I am currently pursuing an intensive Python Full Stack Development with AI/ML training program at WhiteTrack
+            Technologies, where I am enhancing my expertise in modern web technologies, backend development, cloud deployment, and AI integration.
+            I am continuously learning new technologies, improving my problem-solving abilities, and seeking opportunities to contribute to innovative 
+            software development and AI-driven projects.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Education -->
+
+<section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-container">
+
+        <div class="education-card">
+
+            <div class="education-year">
+                2022 - 2026
+            </div>
+
+            <div class="education-content">
+
+                <h3>B.Tech Computer Science & Engineering</h3>
+
+                <h4>UKF College of Engineering & Technology</h4>
+
+                <p>
+                    Graduated with a CGPA of <strong>8.57</strong>.
+                    Built strong foundations in software development,
+                    data structures, algorithms, databases, artificial
+                    intelligence, machine learning, and web technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="education-card">
+
+            <div class="education-year">
+                2022
+            </div>
+
+            <div class="education-content">
+
+                <h3>Higher Secondary Education (CBSE)</h3>
+
+                <h4>Sree Narayana Central School</h4>
+
+                <p>
+                    Completed Class 12 with
+                    <strong>90%</strong>, focusing on Science and
+                    Mathematics.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="education-card">
+
+            <div class="education-year">
+                2020
+            </div>
+
+            <div class="education-content">
+
+                <h3>Secondary Education (CBSE)</h3>
+
+                <h4>Sree Narayana Central School</h4>
+
+                <p>
+                    Completed Class 10 with
+                    <strong>83%</strong>, developing a strong academic
+                    foundation and interest in technology.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Skills -->
+
+<section id="skills">
+    
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill">
+            <img src="images/html5.svg" alt="HTML">
+            <p>HTML</p>
+        </div>
+
+        <div class="skill">
+            <img src="images/css.svg" alt="CSS">
+            <p>CSS</p>
+        </div>
+
+        <div class="skill">
+            <img src="images/java.svg" alt="JavaScript">
+            <p>Java</p>
+        </div>
+
+        <div class="skill">
+            <img src="images/javascript.svg" alt="JavaScript">
+            <p>JavaScript</p>
+        </div>
+
+        <div class="skill">
+            <img src="images/python.svg" alt="Python">
+            <p>Python</p>
+        </div>
+
+        <div class="skill">
+            <img src="images/django.svg" alt="Django">
+            <p>Django</p>
+        </div>
+
+        <div class="skill">
+            <img src="images/mysql.svg" alt="MySQL">
+            <p>MySQL</p>
+        </div>
+
+        <div class="skill">
+            <img src="images/git.svg" alt="Git">
+            <p>Git</p>
+        </div>
+
+        <div class="skill">
+            <img src="images/github.svg" alt="GitHub">
+            <p>GitHub</p>
+        </div>
+        <div class="skill">
+            <img src="images/bootstrap.svg" alt="Bootstrap">
+            <p>Bootstrap</p>
+        </div>
+
+        <div class="skill">
+            <img src="images/react.svg" alt="React">
+            <p>React</p>
+        </div>
+
+        <div class="skill">
+            <img src="images/nodejs.svg" alt="Node.js">
+            <p>Node.js</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Internships -->
+
+<section id="internships">
+
+    <h2 class="section-title">Internships & Training</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+                
+                <div class="current-badge">Currently Pursuing</div>
+
+                <h3>Python Full Stack with AI/ML Training</h3>
+
+                <h4>WhiteTrack Technologies, Trivandrum</h4>
+
+                <span>2026 - Present</span>
+
+                <p>
+                    Currently pursuing a 100-day intensive training program
+                    focused on Python Full Stack Development integrated with
+                    Artificial Intelligence and Machine Learning concepts.
+                    Learning frontend development using HTML, CSS,
+                    JavaScript, Bootstrap and React, along with backend
+                    development using Python, Django and database
+                    management. Also gaining exposure to AI/ML workflows,
+                    model integration and real-world project development.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>Data Science & Machine Learning Intern</h3>
+
+                <h4>CyborgAI Gen Automation</h4>
+
+                <span>May 2025 - June 2025</span>
+
+                <p>
+                    Learned data preprocessing, exploratory data
+                    analysis, visualization using Pandas, NumPy and
+                    Matplotlib. Gained exposure to regression,
+                    classification and clustering algorithms.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>AI, Python & Data Science Program</h3>
+
+                <h4>TechbyHeart</h4>
+
+                <span>June 2025</span>
+
+                <p>
+                    Attended a 20-hour program covering Python,
+                    Artificial Intelligence and Data Science concepts.
+                    Learned dataset handling, structured problem solving
+                    and AI workflow fundamentals.
+                </p>
+
+            </div>
+
+        </div>
+
+         <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>Python Intern</h3>
+
+                <h4>Logiprompt Tech Solutions Pvt Ltd</h4>
+
+                <span>July 2024</span>
+
+                <p>
+                    Completed a short-term internship focused on Python
+                    fundamentals. Improved understanding of Python
+                    syntax, functions, modular programming and problem
+                    solving through hands-on exercises.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Projects -->
+
+<section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <!-- Project 1 -->
+
+    <div class="project-showcase">
+
+        <div class="project-content">
+            <h3>Email Spam Detection System</h3>
+
+            <p>
+                Developed a machine learning based email spam detection
+                system using the Naive Bayes classification algorithm.
+                Built a Flask backend for model inference and API
+                handling. Deployed and tested the application using
+                GitHub and Render.
+            </p>
+
+            <div class="tech-stack">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>Scikit-Learn</span>
+                <span>Naive Bayes</span>
+            </div>
+
+        </div>
+
+        <div class="project-image">
+            <img src="images/esd.jpg" alt="email spam">
+        </div>
+
+    </div>
+
+    <!-- Project 2 -->
+
+    <div class="project-showcase reverse">
+
+        <div class="project-content">
+            <h3>AI Chatbot Application</h3>
+
+            <p>
+                Built an AI-powered chatbot using the Phi language model
+                with a Flask backend and React frontend to provide
+                intelligent responses and seamless user interaction.
+            </p>
+
+            <div class="tech-stack">
+                <span>Python</span>
+                <span>React</span>
+                <span>Flask</span>
+                <span>Phi Model</span>
+            </div>
+        </div>
+
+        <div class="project-image">
+            <img src="images/aichatbot.jpg" alt="aibot">
+        </div>
+
+    </div>
+
+    <!-- Project 3 -->
+
+    <div class="project-showcase">
+
+        <div class="project-content">
+            <h3>EV Connect</h3>
+
+            <p>
+                Developed a full-stack EV charging slot booking
+                platform that enables users to reserve charging
+                slots and receive booking confirmation emails.
+            </p>
+
+            <div class="tech-stack">
+                <span>React</span>
+                <span>Firebase</span>
+                <span>EmailJS</span>
+            </div>
+        </div>
+
+        <div class="project-image">
+            <img src="images/ev.jpg" alt="ev">
+        </div>
+
+    </div>
+
+    <!-- Project 4 -->
+
+    <div class="project-showcase reverse">
+
+        <div class="project-content">
+            <h3>Real-Time Object Detection</h3>
+
+            <p>
+                Implemented an object detection system using YOLOv8 and
+                OpenCV capable of detecting objects through webcam input
+                and uploaded images in real time.
+            </p>
+
+            <div class="tech-stack">
+                <span>YOLOv8</span>
+                <span>Python</span>
+                <span>OpenCV</span>
+            </div>
+        </div>
+
+        <div class="project-image">
+            <img src="images/rtod.jpg" alt="real time">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <h3 class="contact-heading">
+        Let's build something <span>amazing.</span>
+    </h3>
+    
+    <div class="contact-layout">
+
+        <!-- Left Side -->
+
+        <div class="contact-left">
+
+            <p class="contact-description">
+                I'm always interested in new opportunities and
+                exciting projects. Whether you have a question
+                or just want to say hi, feel free to reach out.
+            </p>
+
+            <div class="contact-card">
+
+                <div class="contact-icon">📧</div>
+
+                <div>
+                    <small>EMAIL</small>
+                    <h3>abhayabhi965@gmail.com</h3>
+                </div>
+
+            </div>
+
+            <div class="contact-card">
+
+                <div class="contact-icon">📍</div>
+
+                <div>
+                    <small>LOCATION</small>
+                    <h3>Kollam, Kerala, India</h3>
+                </div>
+
+            </div>
+
+            <div class="social-section">
+
+                <p>FOLLOW</p>
+
+                <div class="social-icons">
+
+                    <a href="https://www.linkedin.com/in/abhay-anil-688591393/"
+                    target="_blank">
+
+                        <img src="images/linkedln.png" alt="LinkedIn">
+
+                    </a>
+
+                    <a href="https://github.com/abhayabhi965/White-Track-Technologies"
+                    target="_blank">
+
+                        <img src="images/github.png" alt="GitHub">
+
+                    </a>
+
+                    <a href="https://instagram.com/abhay._.anil"
+                    target="_blank">
+
+                        <img src="images/instagram.png" alt="Instagram">
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+
+        <div class="contact-form">
+
+            <form>
+
+                <label>Name</label>
+                <input type="text" placeholder="Your name">
+
+                <label>Email</label>
+                <input type="email" placeholder="your@email.com">
+
+                <label>Message</label>
+                <textarea rows="7"
+                    placeholder="Tell me about your project..."></textarea>
+
+                <button type="submit" class="send-btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Abhay Anil. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
