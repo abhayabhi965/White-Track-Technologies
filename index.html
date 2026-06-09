@@ -45,6 +45,13 @@
         color:#38bdf8;
     }
 
+    .menu-btn{
+        display:none;
+        font-size:30px;
+        cursor:pointer;
+        color:white;
+    }
+
     nav ul{
         display:flex;
         list-style:none;
@@ -608,18 +615,27 @@
 
     @media (max-width: 768px){
 
+        .menu-btn{
+            display:block;
+        }
+
         nav{
-            flex-direction:column;
-            align-items:center;
-            padding:15px;
+            padding:15px 20px;
         }
 
         nav ul{
+            display:none;
             flex-direction:column;
-            align-items:center;
-            gap:12px;
-            margin-top:15px;
+            width:100%;
+            text-align:center;
+            gap:15px;
+            margin-top:20px;
         }
+
+        nav ul.active{
+            display:flex;
+        }
+
 
         .hero{
             padding:140px 8% 80px;
@@ -737,6 +753,8 @@
 <nav>
 
     <div class="logo">Abhay</div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
     <ul>
         <li><a href="#home">Home</a></li>
@@ -1314,6 +1332,19 @@
     </div>
 
 </footer>
+
+<script>
+
+function toggleMenu(){
+
+    document
+    .getElementById("nav-links")
+    .classList
+    .toggle("active");
+
+}
+
+</script>
 
 </body>
 </html>
