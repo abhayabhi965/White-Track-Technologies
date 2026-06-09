@@ -610,14 +610,15 @@
 
         nav{
             flex-direction:column;
-            gap:15px;
+            align-items:center;
             padding:15px;
         }
 
         nav ul{
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:15px;
+            flex-direction:column;
+            align-items:center;
+            gap:12px;
+            margin-top:15px;
         }
 
         .hero{
@@ -637,6 +638,10 @@
             height:300px;
         }
 
+        .skills-container{
+            grid-template-columns:repeat(2,1fr);
+        }
+
         .section-title{
             font-size:32px;
         }
@@ -647,6 +652,22 @@
 
         .education-year{
             width:140px;
+        }
+
+        .project{
+            flex-direction:column;
+        }
+
+        .project.reverse{
+            flex-direction:column;
+        }
+
+        .project-content{
+            width:100%;
+        }
+
+        .project-image{
+            width:100%;
         }
 
         .contact-heading{
@@ -680,6 +701,10 @@
         .hero-image img{
             width:220px;
             height:270px;
+        }
+
+        .skills-container{
+            grid-template-columns:1fr;
         }
 
         .skill{
